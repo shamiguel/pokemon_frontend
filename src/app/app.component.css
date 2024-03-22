@@ -1,0 +1,28 @@
+.pokedex-card {
+    max-width: 400px;
+  }
+  
+.avatar{
+    width:50px; 
+}
+
+.container{
+    width:80%;
+    padding: 20px;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.cards{
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+.types{
+    display: flex;
+    flex-direction: row;
+}
