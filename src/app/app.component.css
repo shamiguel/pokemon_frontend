@@ -2,33 +2,39 @@
     display: flex;
     margin: 0 auto;
     flex-direction: row;
+    align-items: flex-start;
+    height: 950px;
+    padding: 50px;
+    background-color: rgba(209, 237, 212, 0.545);
 }
 .pokedex-card {
     max-width: 400px;
   }
   
 .avatar{
-    width:50px; 
+    width:80px; 
 }
 
 .team{
     flex-grow: 3;
-
+    width:300px;
 }
 
 .container{
     padding: 20px;
-    overflow-y: scroll;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+   
     flex-direction: column;
     flex-grow: 1;
+
+   
 }
 
 .summary{
     flex-grow: 3;
+    width:300px;
 }
 
 .cards{
@@ -36,6 +42,11 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 5px;
+    border: 10px;
+    border-style:ridge;
+    border-color: rgb(141, 212, 141);
+    padding: 20px;
+    background-image: url("https://i.pinimg.com/474x/fb/d0/0f/fbd00f173ca22bc24d75664ec469e497.jpg");
 }
 .types{
     display: flex;

@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { PokemonTeamService } from '../pokemon-team.service';
+import { PokemonTeamService } from '../services/pokemon-team.service';
 import { CommonModule } from '@angular/common';
+import { PokemonCardService } from '../services/pokemon-card.service';
 @Component({
   selector: 'app-pokemon-card',
   standalone: true,
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PokemonCardComponent {
 
-  constructor(private teamService: PokemonTeamService) { }
+  constructor(private teamService: PokemonTeamService, private cardService: PokemonCardService) { }
   team: any[] = []
   @Input()
   monster:any;
@@ -20,6 +21,7 @@ export class PokemonCardComponent {
     this.teamService.getTeam().subscribe(team => this.team = team);
     console.log(this.team)
   }
+
 
   addToTeam(monster:any){
     const newMemeber = monster;

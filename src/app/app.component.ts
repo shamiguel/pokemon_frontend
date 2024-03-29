@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
-import { PokemonService } from './pokemon.service';
+import { PokemonService } from './services/pokemon.service';
 import { PokemonPaginationComponent } from './pokemon-pagination/pokemon-pagination.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonTeamComponent } from './pokemon-team/pokemon-team.component';
-
+import { PokemonCardService } from './services/pokemon-card.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,7 +19,7 @@ export class AppComponent {
   title = 'pokemon_frontend';
   pokemon:any[] = [];
   monster:any;
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private cardService: PokemonCardService) { }
 
   ngOnInit(): void {
     this.pokemonService.fetchPokemon()
