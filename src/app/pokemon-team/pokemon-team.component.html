@@ -2,7 +2,8 @@
 <h1>YOUR TEAM</h1>
     <ul>
         <li *ngFor="let mon of team">
-            {{mon.name}}
+            <h3>{{mon.name}}</h3>
+            <img src={{mon.sprites.front_default}} class="teammate">
         </li>
     </ul>
 </div>
