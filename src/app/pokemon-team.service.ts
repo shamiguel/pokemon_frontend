@@ -19,9 +19,9 @@ export class PokemonTeamService {
     return this.team.asObservable();
   }
 
-  removeFromTeam(mon:any){
+  removeFromTeam(monster:any){
     const currentTeam = this.team.getValue();
-    const updatedTeam = currentTeam.filter(mon => mon.name === mon.name);
+    const updatedTeam = currentTeam.filter(mon => mon.name !== monster.name);
     this.team.next(updatedTeam);
   }
 }
