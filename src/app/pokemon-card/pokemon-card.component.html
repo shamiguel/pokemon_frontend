@@ -14,13 +14,18 @@
             <em>Type:</em>
             <div class="types">
               <div *ngFor="let type of monster.types">
-                <p>{{type.type.name}} " "</p>
+                <p>{{type.type.name}}</p>
               </div>
             </div>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button>Action</button>
-            <button mat-button>Action</button>
+            <button mat-button 
+            (click)="addToTeam(monster)"
+            [disabled]="team.length === 6"
+            >Add</button>
+            <button mat-button
+            (click)="removeFromTeam(monster)"
+            >Remove</button>
           </mat-card-actions>
         </mat-card>
     </div>

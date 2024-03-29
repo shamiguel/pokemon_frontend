@@ -6,11 +6,12 @@ import { MatCardModule } from '@angular/material/card';
 import { PokemonService } from './pokemon.service';
 import { PokemonPaginationComponent } from './pokemon-pagination/pokemon-pagination.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { PokemonTeamComponent } from './pokemon-team/pokemon-team.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MatSlideToggleModule, MatCardModule, PokemonPaginationComponent, PokemonCardComponent],
+  imports: [CommonModule, RouterOutlet, MatSlideToggleModule, MatCardModule, PokemonPaginationComponent, PokemonCardComponent, PokemonTeamComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

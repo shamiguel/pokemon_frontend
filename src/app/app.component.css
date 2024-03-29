@@ -1,3 +1,8 @@
+.app{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+}
 .pokedex-card {
     max-width: 400px;
   }
@@ -6,8 +11,12 @@
     width:50px; 
 }
 
+.team{
+    flex-grow: 3;
+
+}
+
 .container{
-    width:100%;
     padding: 20px;
     overflow-y: scroll;
     display: flex;
@@ -15,6 +24,11 @@
     align-items: center;
     margin: auto;
     flex-direction: column;
+    flex-grow: 1;
+}
+
+.summary{
+    flex-grow: 3;
 }
 
 .cards{
