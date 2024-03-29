@@ -1,0 +1,40 @@
+<!--credit to: https://stackblitz.com/edit/pagination-component-angular?file=src%2Fapp%2Fapp.component.html-->
+<nav>
+    <ul>
+      <!-- previous button -->
+      <li
+        [class]="currentPage === 1 ? 'page-item disabled' : 'page-item'"
+        *ngIf="nextPreviousButtons"
+      >
+        <button  mat-button class="page-link" (click)="previous()">«</button>
+      </li>
+      <!-- page numbers -->
+      <ng-container *ngFor="let p of totalPages; index as i">
+        <li
+          *ngIf="i + 1 >= currentPage - maxSize && i + 1 <= currentPage + maxSize"
+          [class]="currentPage === i + 1 ? 'page-item active' : 'page-item'"
+        >
+          <button  mat-button class="page-link" (click)="selectPageNumber(i + 1)">
+            {{ i + 1 }}
+          </button>
+        </li>
+      </ng-container>
+      <!-- next button -->
+      <li
+        [class]="
+          currentPage === totalPages.length ? 'page-item disabled' : 'page-item'
+        "
+        *ngIf="nextPreviousButtons"
+      >
+        <button  mat-button class="page-link" (click)="next()">»</button>
+      </li>
+      <!-- last button -->
+      <li
+        [class]="
+          currentPage === totalPages.length ? 'page-item disabled' : 'page-item'
+        "
+        *ngIf="firstLastButtons"
+      >
+      </li>
+    </ul>
+  </nav>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="cards">
+        <mat-card>
+             <mat-card-header>
+              <img  mat-card-avatar src={{monster.sprites.front_default}} class="avatar">
+          
+            <mat-card-title>{{monster.name}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-md-image src={{monster.sprites.other.home.front_default}} alt="pokedex image for togepi">
+          <mat-card-content>
+            <p>
+              {{monster.dex_entry}}
+            </p>
+            <em>Type:</em>
+            <div class="types">
+              <div *ngFor="let type of monster.types">
+                <p>{{type.type.name}} " "</p>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Action</button>
+            <button mat-button>Action</button>
+          </mat-card-actions>
+        </mat-card>
+    </div>
+  </div>
