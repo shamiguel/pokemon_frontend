@@ -1,11 +1,11 @@
 
 <div class="card">
     <mat-card class="inner">
-            <mat-card-header>
-            <img  mat-card-avatar src={{monster.sprites.front_default}} class="avatar">
+            <mat-card-header *ngIf="monster.sprites">
+                <img  mat-card-avatar src={{monster.sprites.front_default}} class="avatar">
         
-        <mat-card-title>{{monster.name}}</mat-card-title>
-        </mat-card-header>
+                <mat-card-title>{{monster.name}}</mat-card-title>
+            </mat-card-header>
         <img mat-card-md-image src={{monster.sprites.other.home.front_default}} alt="pokedex image for togepi">
         <mat-card-content>
         <p>

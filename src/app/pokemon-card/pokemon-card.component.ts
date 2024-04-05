@@ -3,6 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { PokemonTeamService } from '../services/pokemon-team.service';
 import { CommonModule } from '@angular/common';
 import { PokemonCardService } from '../services/pokemon-card.service';
+import { Pokemon } from '../../shared/pokemon_interface';
 @Component({
   selector: 'app-pokemon-card',
   standalone: true,
@@ -13,9 +14,9 @@ import { PokemonCardService } from '../services/pokemon-card.service';
 export class PokemonCardComponent {
 
   constructor(private teamService: PokemonTeamService, private cardService: PokemonCardService) { }
-  team: any[] = []
+  team: Pokemon[] = []
   @Input()
-  monster:any;
+  monster:Pokemon ={name: '', url: ''};
 
   ngOnInit(){
     this.teamService.getTeam().subscribe(team => this.team = team);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { Pokemon } from '../../shared/pokemon_interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,9 +7,9 @@ export class PokemonService {
 
   constructor() { }
   rawData:any;
-  pokemon:any[] = [];
+  pokemon:Pokemon[] = [];
 
-  fetchPokemon(): Promise<any[]> {
+  fetchPokemon(): Promise<Pokemon[]> {
     const url = 'https://pokeapi.co/api/v2/pokemon?limit=151';
     return fetch(url)
         .then(response => response.json())

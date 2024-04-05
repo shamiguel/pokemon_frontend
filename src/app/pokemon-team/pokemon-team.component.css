@@ -6,8 +6,8 @@
 }
 .team{
     padding:20px;
-    height: 750px;
-    width:400px;
+    height: 500px;
+    width:200px;
     display: flex;
     align-items: center;
 }

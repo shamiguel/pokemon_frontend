@@ -8,6 +8,7 @@ import { PokemonPaginationComponent } from './pokemon-pagination/pokemon-paginat
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonTeamComponent } from './pokemon-team/pokemon-team.component';
 import { PokemonCardService } from './services/pokemon-card.service';
+import { Pokemon } from '../shared/pokemon_interface';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -17,7 +18,7 @@ import { PokemonCardService } from './services/pokemon-card.service';
 })
 export class AppComponent {
   title = 'pokemon_frontend';
-  pokemon:any[] = [];
+  pokemon:Pokemon[] = [];
   monster:any;
   constructor(private pokemonService: PokemonService, private cardService: PokemonCardService) { }
 
@@ -25,13 +26,14 @@ export class AppComponent {
     this.pokemonService.fetchPokemon()
         .then(pokemon => {
             this.pokemon = pokemon;
+            console.log(pokemon)
         })
         .catch(error => {
             console.error('Error fetching Pokemon:', error);
         });
   }
 
-  onClick(pokemon:any){
+  onClick(pokemon:Pokemon){
     this.monster = pokemon;
   }
 
