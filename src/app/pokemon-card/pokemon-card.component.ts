@@ -24,13 +24,13 @@ export class PokemonCardComponent {
   }
 
 
-  addToTeam(monster:any){
+  addToTeam(monster:Pokemon){
     const newMemeber = monster;
     this.teamService.addToTeam(newMemeber);
     console.log(this.team)
   }
 
-  removeFromTeam(monster:any){
+  removeFromTeam(monster:Pokemon){
     const remove = monster;
     this.teamService.removeFromTeam(remove);
   }

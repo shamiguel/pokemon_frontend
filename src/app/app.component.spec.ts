@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { PokemonService } from './services/pokemon.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -26,4 +27,25 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('YOUR TEAM');
   });
+
+  it('should render a pc box', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.getElementsByClassName('container').length).toBe(1)
+  })
+
+  it('should render a team box', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.getElementsByClassName('teamcontainer').length).toBe(1)
+  })
+
+  it('should render a pc box', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.getElementsByClassName('summary').length).toBe(1)
+  })
 });

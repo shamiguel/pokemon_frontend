@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from '../../shared/pokemon_interface';
+import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,5 +34,15 @@ export class PokemonService {
             // Wait for all promises to resolve
             return Promise.all(fetchPromises);
         });
-}
+    };
+
+    fetchMock(): Observable<any> {
+        // Mocked data, replace it with your desired data
+        const mockData = [
+          { name: 'Bigachew', url: 'pokemon.com' },
+          { name: 'Nyeeooowth', url: 'pokemon.com'  },
+          // Add more mock data items as needed
+        ];
+        return of(mockData);
+      }
 }
