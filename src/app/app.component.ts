@@ -26,7 +26,6 @@ export class AppComponent {
     this.pokemonService.fetchPokemon()
         .then(pokemon => {
             this.pokemon = pokemon;
-            console.log(pokemon)
         })
         .catch(error => {
             console.error('Error fetching Pokemon:', error);

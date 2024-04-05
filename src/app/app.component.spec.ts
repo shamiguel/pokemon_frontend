@@ -48,4 +48,13 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.getElementsByClassName('summary').length).toBe(1)
   })
+
+  it('should not render a pokemon card initially', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.getElementsByClassName('pokecard').length).toBe(0)
+  })
+
+  
 });
